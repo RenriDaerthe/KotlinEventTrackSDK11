@@ -1,0 +1,1 @@
+This was created using an old IDE, and an old SDK. Kapt no longer is supported past SDK16 which is why this code will NOT work. IF you do want to make it work update your home environment to SDK11 for smooth using!

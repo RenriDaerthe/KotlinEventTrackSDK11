@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EventTrackerKotlin</string>
+    <string name="add_event">Add Event</string>s
+</resources>

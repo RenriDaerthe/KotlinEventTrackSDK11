@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/loginScreen">
+
+    <!-- Main Screen -->
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="com.example.eventtrackerkotlin.ui.MainScreen"
+        android:label="Main Screen"
+        tools:layout="@layout/main_screen">
+        <action
+            android:id="@+id/action_mainScreen_to_loginScreen"
+            app:destination="@id/loginScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_registrationScreen"
+            app:destination="@id/registrationScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_addEventScreen"
+            app:destination="@id/addEventScreen" />
+    </fragment>
+
+    <!-- Login Screen -->
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="com.example.eventtrackerkotlin.ui.LoginScreen"
+        android:label="Login Screen"
+        tools:layout="@layout/login_screen">
+        <!-- Action to navigate to Registration Screen -->
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registrationScreen" /> <!-- Added action here -->
+        <action
+            android:id="@+id/action_loginScreen_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+
+    <!-- Registration Screen -->
+    <fragment
+        android:id="@+id/registrationScreen"
+        android:name="com.example.eventtrackerkotlin.ui.RegistrationScreen"
+        android:label="Registration Screen"
+        tools:layout="@layout/registration_screen">
+        <action
+            android:id="@+id/action_registrationScreen_to_loginScreen"
+            app:destination="@id/loginScreen" />
+    </fragment>
+
+    <!-- Add Event Screen -->
+    <fragment
+        android:id="@+id/addEventScreen"
+        android:name="com.example.eventtrackerkotlin.ui.AddEventScreen"
+        android:label="Add Event"
+        tools:layout="@layout/event_creation_edit_screen">
+        <action
+            android:id="@+id/action_addEventScreen_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+
+    <!-- Event Detail Screen -->
+    <fragment
+        android:id="@+id/eventDetailScreen"
+        android:name="com.example.eventtrackerkotlin.ui.EventDetailScreen"
+        android:label="Event Details"
+        tools:layout="@layout/event_detail_screen">
+        <argument
+            android:name="event_name"
+            app:argType="string" />
+        <argument
+            android:name="event_date"
+            app:argType="string" />
+        <argument
+            android:name="event_time"
+            app:argType="string" />
+        <argument
+            android:name="event_description"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_eventDetailScreen_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+
+</navigation>
